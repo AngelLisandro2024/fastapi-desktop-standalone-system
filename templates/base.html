@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sistema Code{% endblock %}</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#7c3aed',
+                            darkPurple: '#5b21b6',
+                            blue: '#2563eb',
+                            darkBlue: '#1d4ed8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Navbar Superior -->
+    <header class="bg-gradient-to-r from-purple-700 to-blue-600 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white/10 p-2 rounded-lg backdrop-blur-sm">
+                    <i class="fa-solid fa-code text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-wide">Sistema Code</h1>
+                    <p class="text-xs text-purple-200">Control de Asistencia e Inventario • Estudiantes & Empleados</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="/reports/pdf" target="_blank" class="bg-white/20 hover:bg-white/30 text-white px-3 py-2 rounded-lg text-sm font-medium transition flex items-center space-x-2 backdrop-blur-sm">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span>Descargar PDF</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal con Sidebar -->
+    <div class="flex-1 flex flex-col md:flex-row max-w-7xl w-full mx-auto">
+        <!-- Sidebar -->
+        <aside class="w-full md:w-64 bg-white border-r border-slate-200 p-4 space-y-2 shadow-sm">
+            <nav class="space-y-1">
+                <a href="/" class="flex items-center space-x-3 px-4 py-2.5 rounded-lg text-slate-700 hover:bg-purple-50 hover:text-purple-700 transition font-medium">
+                    <i class="fa-solid fa-house w-5 text-purple-600"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="/users" class="flex items-center space-x-3 px-4 py-2.5 rounded-lg text-slate-700 hover:bg-purple-50 hover:text-purple-700 transition font-medium">
+                    <i class="fa-solid fa-users w-5 text-purple-600"></i>
+                    <span>Usuarios / Estudiantes</span>
+                </a>
+                <a href="/inventory" class="flex items-center space-x-3 px-4 py-2.5 rounded-lg text-slate-700 hover:bg-purple-50 hover:text-purple-700 transition font-medium">
+                    <i class="fa-solid fa-boxes-stacked w-5 text-purple-600"></i>
+                    <span>Movimientos & Asignaciones</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Contenido Dinámico -->
+        <main class="flex-1 p-6">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500">
+        Sistema Code &copy; 2026 • Todos los derechos reservados
+    </footer>
+
+</body>
+</html>
