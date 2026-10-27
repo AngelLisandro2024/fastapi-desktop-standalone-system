@@ -17,6 +17,9 @@
 
 **FastAPI Desktop Standalone System** es una solución diseñada para empaquetar aplicaciones web basadas en FastAPI como **ejecutables de escritorio portables (`.exe`)**. El sistema integra un hilo de ejecución automático para abrir el navegador predeterminado al iniciar el servidor local, administración de usuarios/estudiantes, control de tiempos e inventario, y exportación de reportes institucionales en PDF mediante **ReportLab**.
 
+<img width="1280" height="720" alt="Captura de pantalla (1497)" src="https://github.com/user-attachments/assets/0c521c23-ea4c-4b79-9f1e-d4a8ff7d9021" />
+
+
 ---
 
 ## ✨ Características Principales
